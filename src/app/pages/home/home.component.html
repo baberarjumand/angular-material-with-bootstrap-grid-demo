@@ -1,10 +1,18 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer #drawerRef>Drawer content</mat-drawer>
+  <mat-drawer #drawerRef>
+    <div class="logo-container">
+      <svg class="logo-svg" viewBox="0 0 24 24">
+        <path
+          fill="var(--light-purple)"
+          d="M8,16.61V15.37L14,11.91V7.23L9,10.12L4,7.23V13L3,13.58L2,13V5L3.07,4.38L9,7.81L12.93,5.54L14.93,4.38L16,5V13.06L10.92,16L14.97,18.33L20,15.43V11L21,10.42L22,11V16.58L14.97,20.64L8,16.61M22,9.75L21,10.33L20,9.75V8.58L21,8L22,8.58V9.75Z"
+        />
+      </svg>
+    </div>
+  </mat-drawer>
   <mat-drawer-content>
-    <mat-toolbar *ngIf="this.isMobileLayout">
+    <mat-toolbar *ngIf="this.isMobileLayout" color="primary">
       <button
         mat-icon-button
-        class="example-icon"
         aria-label="Example icon-button with menu icon"
         (click)="drawerRef.toggle()"
       >
@@ -14,13 +22,14 @@
       <span class="example-spacer"></span>
       <button
         mat-icon-button
-        class="example-icon favorite-icon"
         aria-label="Example icon-button with heart icon"
         (click)="this.logOut()"
       >
         <mat-icon>exit_to_app</mat-icon>
       </button>
     </mat-toolbar>
-    <div>Main Content</div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
   </mat-drawer-content>
 </mat-drawer-container>

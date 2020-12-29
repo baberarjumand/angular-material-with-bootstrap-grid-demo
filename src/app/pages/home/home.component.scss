@@ -2,7 +2,27 @@
   flex: 1 1 auto;
 }
 
-// button {
-//   border: none;
-//   background: none;
-// }
+mat-drawer-container {
+  height: 100vh;
+}
+
+mat-drawer {
+  background-color: var(--light-gray);
+}
+
+.drawer-content {
+  height: 100%;
+  //   background-color: var(--light-gray);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-svg {
+  width: 64px;
+  height: auto;
+  margin: 64px;
+}
