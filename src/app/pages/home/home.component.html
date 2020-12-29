@@ -1,0 +1,26 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawerRef>Drawer content</mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar *ngIf="this.isMobileLayout">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+        (click)="drawerRef.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Home</span>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        (click)="this.logOut()"
+      >
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div>Main Content</div>
+  </mat-drawer-content>
+</mat-drawer-container>

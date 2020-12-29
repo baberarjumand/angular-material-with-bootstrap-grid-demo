@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "ng-material-demo"
+  "defaultProject": "ng-material-demo",
+  "cli": {
+    "analytics": false
+  }
 }

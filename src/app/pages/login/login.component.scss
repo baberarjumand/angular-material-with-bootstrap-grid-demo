@@ -1,0 +1,22 @@
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray);
+}
+
+.logo-svg {
+  width: 128px;
+  height: auto;
+}
+
+.username-container {
+  margin-top: 1.5rem;
+}
+
+.icon-styling {
+  color: var(--light-purple);
+}

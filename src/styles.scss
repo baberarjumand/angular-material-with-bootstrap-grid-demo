@@ -1,1 +1,96 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$primary: (
+  Main: #3b3bd6,
+  Light: #7a67ff,
+  Dark: #0012a3,
+  contrast: (
+    Main: #f2f2f2,
+    Light: #191919,
+    Dark: #f2f2f2,
+  ),
+);
+
+$accent: (
+  Main: #ededed,
+  Light: #ffffff,
+  Dark: #bbbbbb,
+  contrast: (
+    Main: #fff,
+    Light: #fff,
+    Dark: #fff,
+  ),
+);
+
+$warn: $mat-red;
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $ng-material-demo-primary: mat-palette($mat-indigo);
+// $ng-material-demo-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+// $ng-material-demo-warn: mat-palette($mat-red);
+
+$custom-theme-primary: mat-palette($primary, Main, Light, Dark);
+$custom-theme-accent: mat-palette($accent, Main, Light, Dark);
+$custom-theme-warn: mat-palette($warn, A200, A400, A700);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+// $ng-material-demo-theme: mat-light-theme(
+//   (
+//     color: (
+//       primary: $ng-material-demo-primary,
+//       accent: $ng-material-demo-accent,
+//       warn: $ng-material-demo-warn,
+//     ),
+//   )
+// );
+
+$custom-theme: mat-light-theme(
+  $custom-theme-primary,
+  $custom-theme-accent,
+  $custom-theme-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+// @include angular-material-theme($ng-material-demo-theme);
+@include angular-material-theme($custom-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  // colors as defined in branding guide 2.0
+  --light-purple: #3c3cd6;
+  --light-purple-hover: #6c6ce0;
+  --dark-purple: #263677;
+
+  --light-gray: #ededed;
+  --dark-gray: #d3d3d3;
+
+  --text-light: #f2f2f2;
+  --text-dark: #191919;
+
+  --fav-color: #ffc400;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
