@@ -11,6 +11,7 @@ import {
 import { Subscription } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-table',
@@ -19,6 +20,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class TableComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   isLoading = true;
   getAllCompaniesSub: Subscription;
@@ -47,6 +49,7 @@ export class TableComponent implements OnInit, OnDestroy, AfterViewInit {
 
         this.dataSource = new MatTableDataSource(this.companiesArr);
         this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
 
         this.isLoading = false;
       });

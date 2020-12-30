@@ -5,7 +5,8 @@
   align-items: center;
 
   .table-div {
-    height: 50%;
+    // height: 75%;
+    max-height: 90%;
     overflow: auto;
 
     .filter-input {
