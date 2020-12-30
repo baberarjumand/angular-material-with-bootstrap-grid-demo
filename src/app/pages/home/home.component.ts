@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ComponentInfoService } from './../../services/component-info.service';
 import { UserAuthService } from './../../services/user-auth.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HostListener } from '@angular/core';
@@ -17,7 +19,11 @@ export class HomeComponent implements OnInit {
   MOBILE_LAYOUT_BREAKPOINT = 1280;
   isMobileLayout: boolean = true;
 
-  constructor(private userAuth: UserAuthService) {
+  constructor(
+    private userAuth: UserAuthService,
+    public componentInfoService: ComponentInfoService,
+    private router: Router
+  ) {
     this.initializeScreenSizeListener();
   }
 
@@ -53,5 +59,13 @@ export class HomeComponent implements OnInit {
 
   logOut(): void {
     this.userAuth.logOut();
+  }
+
+  navigateToRoute(routeInput: string): void {
+    if (this.isMobileLayout) {
+      this.sidenav.close();
+    }
+
+    this.router.navigate([routeInput]);
   }
 }

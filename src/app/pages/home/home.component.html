@@ -8,6 +8,22 @@
         />
       </svg>
     </div>
+    <div class="nav-links-container">
+      <mat-nav-list>
+        <a mat-list-item (click)="this.navigateToRoute('table')">
+          <mat-icon matListIcon>table_view</mat-icon>
+          <div mat-line>Table</div>
+        </a>
+        <a mat-list-item (click)="this.navigateToRoute('form')">
+          <mat-icon matListIcon>list_alt</mat-icon>
+          <div mat-line>Form</div>
+        </a>
+        <a mat-list-item (click)="this.logOut()" style="margin-top: 1rem">
+          <mat-icon matListIcon>exit_to_app</mat-icon>
+          <div mat-line>Log Out</div>
+        </a>
+      </mat-nav-list>
+    </div>
   </mat-drawer>
   <mat-drawer-content>
     <mat-toolbar *ngIf="this.isMobileLayout" color="primary">
@@ -18,13 +34,9 @@
       >
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Home</span>
+      <span>{{ this.componentInfoService.currentComponentHeading }}</span>
       <span class="example-spacer"></span>
-      <button
-        mat-icon-button
-        aria-label="Example icon-button with heart icon"
-        (click)="this.logOut()"
-      >
+      <button mat-icon-button aria-label="Log out icon" (click)="this.logOut()">
         <mat-icon>exit_to_app</mat-icon>
       </button>
     </mat-toolbar>
