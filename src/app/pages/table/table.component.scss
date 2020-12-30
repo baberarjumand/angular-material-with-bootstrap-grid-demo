@@ -1,0 +1,21 @@
+.table-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .table-div {
+    height: 50%;
+    overflow: auto;
+
+    .filter-input {
+      width: 100%;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1024px;
+      table-layout: fixed;
+    }
+  }
+}

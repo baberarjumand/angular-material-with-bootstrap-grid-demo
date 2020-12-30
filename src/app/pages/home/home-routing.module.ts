@@ -25,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'table',
+        redirectTo: 'grid',
         pathMatch: 'full',
       },
     ],
