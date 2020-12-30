@@ -1,6 +1,9 @@
 <div class="table-container">
   <ng-template [ngIf]="this.isLoading">
-    <div>Loading</div>
+    <div class="loading-container" style="text-align: center">
+      <mat-spinner></mat-spinner>
+      <div class="mt-5">Loading</div>
+    </div>
   </ng-template>
   <!-- <ng-template #displayTable> -->
   <!-- Table -->
