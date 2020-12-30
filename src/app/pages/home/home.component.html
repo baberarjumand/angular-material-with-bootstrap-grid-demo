@@ -10,6 +10,10 @@
     </div>
     <div class="nav-links-container">
       <mat-nav-list>
+        <a mat-list-item (click)="this.navigateToRoute('grid')">
+          <mat-icon matListIcon>view_quilt</mat-icon>
+          <div mat-line>Grid</div>
+        </a>
         <a mat-list-item (click)="this.navigateToRoute('table')">
           <mat-icon matListIcon>table_view</mat-icon>
           <div mat-line>Table</div>

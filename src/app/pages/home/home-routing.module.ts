@@ -11,16 +11,17 @@ const routes: Routes = [
       {
         path: 'table',
         loadChildren: () =>
-          import('../../../app/pages/table/table.module').then(
-            (m) => m.TableModule
-          ),
+          import('../table/table.module').then((m) => m.TableModule),
       },
       {
         path: 'form',
         loadChildren: () =>
-          import('../../../app/pages/form/form.module').then(
-            (m) => m.FormModule
-          ),
+          import('../form/form.module').then((m) => m.FormModule),
+      },
+      {
+        path: 'grid',
+        loadChildren: () =>
+          import('../grid/grid.module').then((m) => m.GridModule),
       },
       {
         path: '**',
