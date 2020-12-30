@@ -1,0 +1,30 @@
+.box {
+  height: 50px;
+}
+
+.box2 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red {
+  background-color: red;
+  background-color: var(--light-purple);
+  color: white;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.black {
+  background-color: black;
+  color: white;
+}

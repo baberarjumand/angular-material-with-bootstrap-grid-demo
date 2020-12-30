@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   // screenHeight = window.innerHeight;
   screenWidth = window.innerWidth;
 
-  MOBILE_LAYOUT_BREAKPOINT = 1280;
+  MOBILE_LAYOUT_BREAKPOINT = 992;
   isMobileLayout: boolean = true;
 
   constructor(
